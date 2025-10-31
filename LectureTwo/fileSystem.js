@@ -40,7 +40,23 @@ const fs = require('fs');
 
 // so we can use the copyFile or just simply the fs.cp() then all things; which does the same job
 
-fs.cp("hey.txt", "heyCopy.txt", (err) => {
+// fs.cp("hey.txt", "heyCopy.txt", (err) => {
+//     if(err) console.error(err);
+//     console.log("Done Copying Boss!");
+// })
+
+
+// fs.cp("hey.txt", "copyFiles/heyCopy.txt", (err) => {
+//     if(err) console.error(err);
+//     console.log("Done Copying to inside the folder!")
+// })
+
+// Done Completed the File system basic operations
+
+
+// Now we'll delete a file which we have created so far!
+
+fs.unlink("copyFiles/heyCopy.txt", (err)=>{
     if(err) console.error(err);
-    console.log("Done Copying Boss!");
+    console.log("File Deleted Sucessfully");
 })
