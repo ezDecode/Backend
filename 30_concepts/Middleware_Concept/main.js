@@ -1,31 +1,28 @@
 const express = require('express')
 const app = express()
-// const port = 3000;
+const fs  = require('fs')
+// import { existsSync } from 'fs';
+
+const requestTime = (req, res, next) => {
+  //We'll check if the file exists or not
 
 
-const userCheck = (req, res, next) => {
-    const userValid = true;
+  const fileExist = fs.existsSync('logs.txt')
+  const itHasContent = fs.readFileSync("logs.txt")
+  if(fileExist){
+    if()
+  }
 
-    if(!userValid){
-        return res.send('Unauthoorised User')
-    }
-    next()
+  fs.writeFileSync("logs.txt", `Logged at ${Date.now()} is a ${req.method}`)
+  next()
 }
+app.use(requestTime)
+
 
 app.get('/', (req, res) => {
-  res.send('hello world')
-})
-app.get('/about', userCheck, (req, res) => {
-  res.send('This is about page after auth check')
-})
-app.get('/contact', (req, res) => {
-  res.send('hello world')
-})
 
-
-// app.listen(port, () => {
-//     console.log(`Server on the port: ${port}`);
-// })
-
+  let responseText = "Well log this time in logs.txt<br>"
+  res.send(responseText)
+})
 
 app.listen(3000)
