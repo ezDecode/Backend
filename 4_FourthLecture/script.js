@@ -60,9 +60,9 @@ app.listen(port, ()=> {
 
 //Route specific Middleware
 
-const express = require('express')
-const app = express();
-const port = 3000;
+// const express = require('express')
+// const app = express();
+// const port = 3000;
 
 /*
 const aboutPass = (req, res, next) => {
@@ -114,3 +114,60 @@ app.listen(port, () => {
     console.log(`Server runnning on Port: ${port}`)
 })
 */
+
+
+
+// Handling Request and Response in the Express JS (Express Routing)
+const express = require('express')
+const app = express();
+const birds = require("./routes/birds")
+const port = 3000;
+
+// to work on the post request: 
+
+app.use(express.static("public"))
+app.use("/birds", birds)
+app.get('/', (req, res) => {
+    res.send('This Get Response');
+})
+
+
+// So test the post, we can use the HTML file but not always; as this is not the best way to do it! So we'll use the Postman for this!
+// app.post('/', (req, res) => {
+//     console.log('This is a Post Response')
+//     res.send({
+//         name: "Akash",
+//         age: 22
+//     })
+// })
+// app.get('/index', (req, res) => {
+//     console.log('This is a get Response')
+//     res.sendFile("template/index.html", {root: __dirname})
+// })
+
+// app.get('/api', (req, res) => {
+//     res.json({a:1, b:2, c:3, d:4})
+// })
+
+app.listen(port, () => {
+    console.log(`Port: ${port}`)
+})
+
+// And we can chain it together actually it'wll work like write the app once and then chain all the methods with it
+
+
+// Some Response methods:
+/*
+res.download()
+res.json()
+res.jsonp()
+res.redirect()
+res.render()
+res.sendFile() -- Send a fucking file and using the get method it'll print all the things in the File you want to send in.
+res.send()
+res.sendStatus()
+*/
+
+
+//Express Routes
+// So we'll create a Route file and Handle all the messy routes there and export all the modules to here!
