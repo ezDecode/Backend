@@ -1,0 +1,7 @@
+init a project with npm
+express install
+
+
+Dynamic Routing 
+    Dynamic Routing
+    How to handle frontend data in the backend!
