@@ -1,0 +1,21 @@
+form handling and working with forms
+
+
+What is session and Cookie
+
+Session does not remember anything! So we use the cookie to save all the data actually and use them later on!
+
+
+Session: (Log in se log out tak ek session)
+- Temporary data stored on the server side!
+- This is secure and Hidden
+Cookie: 
+- Small Piece of data that a website stores in browser
+- This is visible as we are saving them in the users browser
+
+
+
+# Steps to use the Session and Cookies in the Codebase:
+
+1. Install and use the cookie parser
+2. Install and use express-session

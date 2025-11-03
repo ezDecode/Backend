@@ -1,19 +1,17 @@
 const express = require('express')
 const app = express()
-const fs  = require('fs')
-// import { existsSync } from 'fs';
+const fs  = require('fs');
 
 const requestTime = (req, res, next) => {
   //We'll check if the file exists or not
+  const logFile = 'log.txt';
 
-
-  const fileExist = fs.existsSync('logs.txt')
-  const itHasContent = fs.readFileSync("logs.txt")
-  if(fileExist){
-    if()
+  if (!fs.existsSync(logFile)) {
+    fs.writeFileSync(logFile, '-- Log File Created --\n\n');
   }
 
-  fs.writeFileSync("logs.txt", `Logged at ${Date.now()} is a ${req.method}`)
+  const logEntry = `Logged at ${Date.now()} and the method is ${req.method}.\n`
+  fs.appendFileSync(logFile, logEntry)
   next()
 }
 app.use(requestTime)
@@ -25,4 +23,4 @@ app.get('/', (req, res) => {
   res.send(responseText)
 })
 
-app.listen(3000)
+app.listen(4000)
