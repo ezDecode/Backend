@@ -5,3 +5,10 @@ express install
 Dynamic Routing 
     Dynamic Routing
     How to handle frontend data in the backend!
+
+Setting up parser for form -- done
+setting up EJS for EJS Pages
+    install ejs from npm 
+    set up ejs as a view engine
+
+setting up static public files

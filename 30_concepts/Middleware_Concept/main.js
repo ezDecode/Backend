@@ -19,8 +19,8 @@ app.use(requestTime)
 
 app.get('/', (req, res) => {
 
-  let responseText = "Well log this time in logs.txt<br>"
+  let responseText = "Well log this time in log.txt"
   res.send(responseText)
 })
 
-app.listen(4000)
+app.listen(3000)
