@@ -10,7 +10,7 @@ const requestTime = (req, res, next) => {
     fs.writeFileSync(logFile, '-- Log File Created --\n\n');
   }
 
-  const logEntry = `Logged at ${Date.now()} and the method is ${req.method}.\n`
+  const logEntry = `\nLogged at ${Date.now()} and the method is ${req.method}.`
   fs.appendFileSync(logFile, logEntry)
   next()
 }
