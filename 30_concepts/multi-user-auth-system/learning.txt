@@ -1,0 +1,44 @@
+# Phase 1: 
+Basic Project Set up
+Install all the required packages (express, nodemon)
+Then test the Server, weather it's running or not
+
+
+# Phase 2: 
+
+
+Created a Middleware Folder and looger.js
+then we'll set up a Basic access looger middleware
+
+
+
+# Phase 3: 
+
+we'll now setup a user and roles inside the Data folder! Like some data will be added there; so that we can use that Later on
+
+# Phase 4: 
+
+Role Based auth; as we have added some users in the users.js file; using that we are gonna build the whole logic okay
+
+
+
+
+// For the Placement of the Middleware and all;
+
+the errorHandler comes last!
+
+This is the Flow: 
+
+Incoming Request
+   ↓
+Body Parser (express.json)
+   ↓
+Logger Middleware
+   ↓
+→ Routes
+     ↓
+   (optional) getUser → authRole
+     ↓
+Response Sent
+   ↓
+Error Handler (if something exploded)
