@@ -1,1 +1,6 @@
 node_modules/
+
+
+
+
+# function prompt { "PS $(Split-Path -Leaf (Get-Location))> " }
